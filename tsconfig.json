@@ -1,4 +1,17 @@
 {
+  "compilerOptions": {
+    "target": "ESNext",                  
+    "module": "ESNext",                  
+    "moduleResolution": "node",          
+    "jsx": "react-jsx",                 
+    "strict": true,                    
+    "esModuleInterop": true,          
+    "skipLibCheck": true,               
+    "forceConsistentCasingInFileNames": true,  
+    "resolveJsonModule": true,          
+    "allowSyntheticDefaultImports": true 
+  },
+  "include": ["src", "tailwind.config.ts"], 
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
