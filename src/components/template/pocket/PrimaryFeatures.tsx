@@ -10,7 +10,7 @@ import {
   AnimatePresence,
   motion,
 } from 'framer-motion'
-// import { useDebouncedCallback } from 'use-debounce'
+import { useDebouncedCallback } from 'use-debounce'
 
 // import { AppScreen } from '@/components/AppScreen'
 // import { CircleBackground } from '@/components/CircleBackground'
@@ -52,31 +52,39 @@ const features = [
     description:
       'We provide real-time alerts based on key cluster metrics, ensuring you stay informed about performance, resource usage, and potential issues in your infrastructure.',
     icon: DeviceNotificationIcon,
-    screen: StocksScreen,
+    // screen: StocksScreen,
   },
   {
     name: 'Visualize your cluster architecture',
     description:
       'Our Kubernetes cluster visualization feature offers a clear, interactive view of your infrastructure, making it easy to track relationships between nodes, pods, and services in real-time.',
     icon: DeviceTouchIcon,
-    screen: InvestScreen,
+    // screen: InvestScreen,
   },
 ]
 
 function DeviceUserIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
-    <svg viewBox="0 0 32 32" aria-hidden="true" {...props}>
-      <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M16 23a3 3 0 100-6 3 3 0 000 6zm-1 2a4 4 0 00-4 4v1a2 2 0 002 2h6a2 2 0 002-2v-1a4 4 0 00-4-4h-2z"
-        fill="#737373"
-      />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M5 4a4 4 0 014-4h14a4 4 0 014 4v24a4.002 4.002 0 01-3.01 3.877c-.535.136-.99-.325-.99-.877s.474-.98.959-1.244A2 2 0 0025 28V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9a2 2 0 00-2 2v24a2 2 0 001.041 1.756C8.525 30.02 9 30.448 9 31s-.455 1.013-.99.877A4.002 4.002 0 015 28V4z"
+    // <svg viewBox="0 0 32 32" aria-hidden="true" {...props}>
+    //   <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
+    //   <path
+    //     fillRule="evenodd"
+    //     clipRule="evenodd"
+    //     d="M16 23a3 3 0 100-6 3 3 0 000 6zm-1 2a4 4 0 00-4 4v1a2 2 0 002 2h6a2 2 0 002-2v-1a4 4 0 00-4-4h-2z"
+    //     fill="#737373"
+    //   />
+    //   <path
+    //     fillRule="evenodd"
+    //     clipRule="evenodd"
+    //     d="M5 4a4 4 0 014-4h14a4 4 0 014 4v24a4.002 4.002 0 01-3.01 3.877c-.535.136-.99-.325-.99-.877s.474-.98.959-1.244A2 2 0 0025 28V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9a2 2 0 00-2 2v24a2 2 0 001.041 1.756C8.525 30.02 9 30.448 9 31s-.455 1.013-.99.877A4.002 4.002 0 015 28V4z"
+    //     fill="#A3A3A3"
+    //   />
+    // </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="size-6">
+      <path 
+        strokeLinecap="round" 
+        strokeLinejoin="round" 
+        d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" 
         fill="#A3A3A3"
       />
     </svg>
@@ -85,59 +93,62 @@ function DeviceUserIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 function DeviceNotificationIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
-    <svg viewBox="0 0 32 32" aria-hidden="true" {...props}>
-      <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M9 0a4 4 0 00-4 4v24a4 4 0 004 4h14a4 4 0 004-4V4a4 4 0 00-4-4H9zm0 2a2 2 0 00-2 2v24a2 2 0 002 2h14a2 2 0 002-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9z"
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="size-6" {...props}>
+      <path strokeLinecap="round" 
+        strokeLinejoin="round" 
+        d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" 
         fill="#A3A3A3"
-      />
-      <path
-        d="M9 8a2 2 0 012-2h10a2 2 0 012 2v2a2 2 0 01-2 2H11a2 2 0 01-2-2V8z"
-        fill="#737373"
-      />
+      />  
     </svg>
   )
 }
 
 function DeviceTouchIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  let id = useId()
+  // let id = useId()
 
   return (
-    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" {...props}>
-      <defs>
-        <linearGradient
-          id={`${id}-gradient`}
-          x1={14}
-          y1={14.5}
-          x2={7}
-          y2={17}
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#737373" />
-          <stop offset={1} stopColor="#D4D4D4" stopOpacity={0} />
-        </linearGradient>
-      </defs>
-      <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M5 4a4 4 0 014-4h14a4 4 0 014 4v13h-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9a2 2 0 00-2 2v24a2 2 0 002 2h4v2H9a4 4 0 01-4-4V4z"
-        fill="#A3A3A3"
-      />
-      <path
-        d="M7 22c0-4.694 3.5-8 8-8"
-        stroke={`url(#${id}-gradient)`}
-        strokeWidth={2}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M21 20l.217-5.513a1.431 1.431 0 00-2.85-.226L17.5 21.5l-1.51-1.51a2.107 2.107 0 00-2.98 0 .024.024 0 00-.005.024l3.083 9.25A4 4 0 0019.883 32H25a4 4 0 004-4v-5a3 3 0 00-3-3h-5z"
+    // <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" {...props}>
+    //   <defs>
+    //     <linearGradient
+    //       id={`${id}-gradient`}
+    //       x1={14}
+    //       y1={14.5}
+    //       x2={7}
+    //       y2={17}
+    //       gradientUnits="userSpaceOnUse"
+    //     >
+    //       <stop stopColor="#737373" />
+    //       <stop offset={1} stopColor="#D4D4D4" stopOpacity={0} />
+    //     </linearGradient>
+    //   </defs>
+    //   <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
+    //   <path
+    //     fillRule="evenodd"
+    //     clipRule="evenodd"
+    //     d="M5 4a4 4 0 014-4h14a4 4 0 014 4v13h-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9a2 2 0 00-2 2v24a2 2 0 002 2h4v2H9a4 4 0 01-4-4V4z"
+    //     fill="#A3A3A3"
+    //   />
+    //   <path
+    //     d="M7 22c0-4.694 3.5-8 8-8"
+    //     stroke={`url(#${id}-gradient)`}
+    //     strokeWidth={2}
+    //     strokeLinecap="round"
+    //     strokeLinejoin="round"
+    //   />
+    //   <path
+    //     d="M21 20l.217-5.513a1.431 1.431 0 00-2.85-.226L17.5 21.5l-1.51-1.51a2.107 2.107 0 00-2.98 0 .024.024 0 00-.005.024l3.083 9.25A4 4 0 0019.883 32H25a4 4 0 004-4v-5a3 3 0 00-3-3h-5z"
+    //     fill="#A3A3A3"
+    //   />
+    // </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor" className="size-6" {...props}>
+      <path 
+        strokeLinecap="round" 
+        strokeLinejoin="round" 
+        d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" 
         fill="#A3A3A3"
       />
     </svg>
+
   )
 }
 
@@ -187,12 +198,12 @@ const bodyAnimation: MotionProps = {
   },
 }
 
-type ScreenProps =
-  | {
-      animated: true
-      custom: CustomAnimationProps
-    }
-  | { animated?: false }
+// type ScreenProps =
+//   | {
+//       animated: true
+//       custom: CustomAnimationProps
+//     }
+//   | { animated?: false }
 
 // function InviteScreen(props: ScreenProps) {
 //   return (
@@ -230,162 +241,163 @@ type ScreenProps =
 //   )
 // }
 
-function StocksScreen(props: ScreenProps) {
-  return (
-    <AppScreen className="w-full">
-      <MotionAppScreenHeader {...(props.animated ? headerAnimation : {})}>
-        <AppScreen.Title>Stocks</AppScreen.Title>
-        <AppScreen.Subtitle>March 9, 2022</AppScreen.Subtitle>
-      </MotionAppScreenHeader>
-      <MotionAppScreenBody
-        {...(props.animated ? { ...bodyAnimation, custom: props.custom } : {})}
-      >
-        {/* <div className="divide-y divide-gray-100">
-          {[
-            {
-              name: 'Laravel',
-              price: '4,098.01',
-              change: '+4.98%',
-              color: '#F9322C',
-              logo: LaravelLogo,
-            },
-            {
-              name: 'Tuple',
-              price: '5,451.10',
-              change: '-3.38%',
-              color: '#5A67D8',
-              logo: TupleLogo,
-            },
-            {
-              name: 'Transistor',
-              price: '4,098.41',
-              change: '+6.25%',
-              color: '#2A5B94',
-              logo: TransistorLogo,
-            },
-            {
-              name: 'Diageo',
-              price: '250.65',
-              change: '+1.25%',
-              color: '#3320A7',
-              logo: DiageoLogo,
-            },
-            {
-              name: 'StaticKit',
-              price: '250.65',
-              change: '-3.38%',
-              color: '#2A3034',
-              logo: StaticKitLogo,
-            },
-            {
-              name: 'Statamic',
-              price: '5,040.85',
-              change: '-3.11%',
-              color: '#0EA5E9',
-              logo: StatamicLogo,
-            },
-            {
-              name: 'Mirage',
-              price: '140.44',
-              change: '+9.09%',
-              color: '#16A34A',
-              logo: MirageLogo,
-            },
-            {
-              name: 'Reversable',
-              price: '550.60',
-              change: '-1.25%',
-              color: '#8D8D8D',
-              logo: ReversableLogo,
-            },
-          ].map((stock) => (
-            <div key={stock.name} className="flex items-center gap-4 px-4 py-3">
-              <div
-                className="flex-none rounded-full"
-                style={{ backgroundColor: stock.color }}
-              >
-                <stock.logo className="h-10 w-10" />
-              </div>
-              <div className="flex-auto text-sm text-gray-900">
-                {stock.name}
-              </div>
-              <div className="flex-none text-right">
-                <div className="text-sm font-medium text-gray-900">
-                  {stock.price}
-                </div>
-                <div
-                  className={clsx(
-                    'text-xs leading-5',
-                    stock.change.startsWith('+')
-                      ? 'text-cyan-500'
-                      : 'text-gray-500',
-                  )}
-                >
-                  {stock.change}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div> */}
-      </MotionAppScreenBody>
-    </AppScreen>
-  )
-}
+// function StocksScreen(props: ScreenProps) {
+//   return (
+//     <AppScreen className="w-full">
+//       <MotionAppScreenHeader {...(props.animated ? headerAnimation : {})}>
+//         <AppScreen.Title>Stocks</AppScreen.Title>
+//         <AppScreen.Subtitle>March 9, 2022</AppScreen.Subtitle>
+//       </MotionAppScreenHeader>
+//       <MotionAppScreenBody
+//         {...(props.animated ? { ...bodyAnimation, custom: props.custom } : {})}
+//       >
+//         <div className="divide-y divide-gray-100">
+//           {[
+//             {
+//               name: 'Laravel',
+//               price: '4,098.01',
+//               change: '+4.98%',
+//               color: '#F9322C',
+//               logo: LaravelLogo,
+//             },
+//             {
+//               name: 'Tuple',
+//               price: '5,451.10',
+//               change: '-3.38%',
+//               color: '#5A67D8',
+//               logo: TupleLogo,
+//             },
+//             {
+//               name: 'Transistor',
+//               price: '4,098.41',
+//               change: '+6.25%',
+//               color: '#2A5B94',
+//               logo: TransistorLogo,
+//             },
+//             {
+//               name: 'Diageo',
+//               price: '250.65',
+//               change: '+1.25%',
+//               color: '#3320A7',
+//               logo: DiageoLogo,
+//             },
+//             {
+//               name: 'StaticKit',
+//               price: '250.65',
+//               change: '-3.38%',
+//               color: '#2A3034',
+//               logo: StaticKitLogo,
+//             },
+//             {
+//               name: 'Statamic',
+//               price: '5,040.85',
+//               change: '-3.11%',
+//               color: '#0EA5E9',
+//               logo: StatamicLogo,
+//             },
+//             {
+//               name: 'Mirage',
+//               price: '140.44',
+//               change: '+9.09%',
+//               color: '#16A34A',
+//               logo: MirageLogo,
+//             },
+//             {
+//               name: 'Reversable',
+//               price: '550.60',
+//               change: '-1.25%',
+//               color: '#8D8D8D',
+//               logo: ReversableLogo,
+//             },
+//           ].map((stock) => (
+//             <div key={stock.name} className="flex items-center gap-4 px-4 py-3">
+//               <div
+//                 className="flex-none rounded-full"
+//                 style={{ backgroundColor: stock.color }}
+//               >
+//                 <stock.logo className="h-10 w-10" />
+//               </div>
+//               <div className="flex-auto text-sm text-gray-900">
+//                 {stock.name}
+//               </div>
+//               <div className="flex-none text-right">
+//                 <div className="text-sm font-medium text-gray-900">
+//                   {stock.price}
+//                 </div>
+//                 <div
+//                   className={clsx(
+//                     'text-xs leading-5',
+//                     stock.change.startsWith('+')
+//                       ? 'text-cyan-500'
+//                       : 'text-gray-500',
+//                   )}
+//                 >
+//                   {stock.change}
+//                 </div>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
 
-function InvestScreen(props: ScreenProps) {
-  return (
-    <AppScreen className="w-full">
-      <MotionAppScreenHeader {...(props.animated ? headerAnimation : {})}>
-        <AppScreen.Title>Buy $LA</AppScreen.Title>
-        <AppScreen.Subtitle>
-          <span className="text-white">$34.28</span> per share
-        </AppScreen.Subtitle>
-      </MotionAppScreenHeader>
-      <MotionAppScreenBody
-        {...(props.animated ? { ...bodyAnimation, custom: props.custom } : {})}
-      >
-        <div className="px-4 py-6">
-          <div className="space-y-4">
-            {[
-              { label: 'Number of shares', value: '100' },
-              {
-                label: 'Current market price',
-                value: (
-                  <div className="flex">
-                    $34.28
-                    <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6">
-                      <path
-                        d="M17 15V7H9M17 7 7 17"
-                        stroke="#06B6D4"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                ),
-              },
-              { label: 'Estimated cost', value: '$3,428.00' },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="flex justify-between border-b border-gray-100 pb-4"
-              >
-                <div className="text-sm text-gray-500">{item.label}</div>
-                <div className="text-sm font-semibold text-gray-900">
-                  {item.value}
-                </div>
-              </div>
-            ))}
-            <div className="rounded-lg bg-cyan-500 px-3 py-2 text-center text-sm font-semibold text-white">
-              Buy shares
-            </div>
-          </div>
-        </div>
-      </MotionAppScreenBody>
-    </AppScreen>
-  )
-}
+//       </MotionAppScreenBody>
+//     </AppScreen>
+//   )
+// }
+
+// function InvestScreen(props: ScreenProps) {
+//   return (
+//     <AppScreen className="w-full">
+//       <MotionAppScreenHeader {...(props.animated ? headerAnimation : {})}>
+//         <AppScreen.Title>Buy $LA</AppScreen.Title>
+//         <AppScreen.Subtitle>
+//           <span className="text-white">$34.28</span> per share
+//         </AppScreen.Subtitle>
+//       </MotionAppScreenHeader>
+//       <MotionAppScreenBody
+//         {...(props.animated ? { ...bodyAnimation, custom: props.custom } : {})}
+//       >
+//         <div className="px-4 py-6">
+//           <div className="space-y-4">
+//             {[
+//               { label: 'Number of shares', value: '100' },
+//               {
+//                 label: 'Current market price',
+//                 value: (
+//                   <div className="flex">
+//                     $34.28
+//                     <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6">
+//                       <path
+//                         d="M17 15V7H9M17 7 7 17"
+//                         stroke="#06B6D4"
+//                         strokeWidth="2"
+//                         strokeLinecap="round"
+//                         strokeLinejoin="round"
+//                       />
+//                     </svg>
+//                   </div>
+//                 ),
+//               },
+//               { label: 'Estimated cost', value: '$3,428.00' },
+//             ].map((item) => (
+//               <div
+//                 key={item.label}
+//                 className="flex justify-between border-b border-gray-100 pb-4"
+//               >
+//                 <div className="text-sm text-gray-500">{item.label}</div>
+//                 <div className="text-sm font-semibold text-gray-900">
+//                   {item.value}
+//                 </div>
+//               </div>
+//             ))}
+//             <div className="rounded-lg bg-cyan-500 px-3 py-2 text-center text-sm font-semibold text-white">
+//               Buy shares
+//             </div>
+//           </div>
+//         </div>
+//       </MotionAppScreenBody>
+//     </AppScreen>
+//   )
+// }
 
 function usePrevious<T>(value: T) {
   let ref = useRef<T>()
@@ -403,20 +415,20 @@ function FeaturesDesktop() {
   let prevIndex = usePrevious(selectedIndex)
   let isForwards = prevIndex === undefined ? true : selectedIndex > prevIndex
 
-  // let onChange = useDebouncedCallback(
-  //   (selectedIndex) => {
-  //     setSelectedIndex(selectedIndex)
-  //     setChangeCount((changeCount) => changeCount + 1)
-  //   },
-  //   100,
-  //   { leading: true },
-  // )
+  let onChange = useDebouncedCallback(
+    (selectedIndex) => {
+      setSelectedIndex(selectedIndex)
+      setChangeCount((changeCount) => changeCount + 1)
+    },
+    100,
+    { leading: true },
+  )
 
   return (
     <TabGroup
       className="grid grid-cols-12 items-center gap-8 lg:gap-16 xl:gap-24"
       selectedIndex={selectedIndex}
-      // onChange={onChange}
+      onChange={onChange}
       vertical
     >
       <TabList className="relative z-10 order-last col-span-6 space-y-6">
@@ -451,7 +463,7 @@ function FeaturesDesktop() {
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <CircleBackground color="#13B5C8" className="animate-spin-slower" />
         </div>
-        {/* <PhoneFrame className="z-10 mx-auto w-full max-w-[366px]"> */}
+        {/* <PhoneFrame className="z-10 mx-auto w-full max-w-[366px]">
           <TabPanels as={Fragment}>
             <AnimatePresence
               initial={false}
@@ -464,16 +476,17 @@ function FeaturesDesktop() {
                     key={feature.name + changeCount}
                     className="col-start-1 row-start-1 flex focus:outline-offset-[32px] ui-not-focus-visible:outline-none"
                   >
-                    {/* <feature.screen
+                    <feature.screen
                       animated
                       custom={{ isForwards, changeCount }}
-                    /> */}
+                    />
+
                   </TabPanel>
                 ) : null,
               )}
             </AnimatePresence>
           </TabPanels>
-        {/* </PhoneFrame> */}
+        </PhoneFrame> */}
       </div>
     </TabGroup>
   )
@@ -530,9 +543,9 @@ function FeaturesMobile() {
                   className={featureIndex % 2 === 1 ? 'rotate-180' : undefined}
                 />
               </div>
-              <PhoneFrame className="relative mx-auto w-full max-w-[366px]">
+              {/* <PhoneFrame className="relative mx-auto w-full max-w-[366px]"> */}
                 {/* <feature.screen /> */}
-              </PhoneFrame>
+              {/* </PhoneFrame> */}
               <div className="absolute inset-x-0 bottom-0 bg-gray-800/95 p-6 backdrop-blur sm:p-10">
                 <feature.icon className="h-8 w-8" />
                 <h3 className="mt-6 text-sm font-semibold text-white sm:text-lg">
