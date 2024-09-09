@@ -1,5 +1,3 @@
-'use client'
-
 // import Link from 'next/link'
 import { Link } from 'react-router-dom'
 import {
@@ -100,7 +98,7 @@ export function Header() {
                           exit={{ opacity: 0 }}
                           className="fixed inset-0 z-0 bg-gray-300/60 backdrop-blur"
                         />
-                        <PopoverPanel
+                        {/* <PopoverPanel
                           static
                           as={motion.div}
                           initial={{ opacity: 0, y: -32 }}
@@ -113,7 +111,7 @@ export function Header() {
                           className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-gray-50 px-6 pb-6 pt-32 shadow-2xl shadow-gray-900/20"
                         >
                           <div className="space-y-4">
-                            {/* <MobileNavLink href="/#features">
+                            <MobileNavLink href="/#features">
                               Features
                             </MobileNavLink>
                             <MobileNavLink href="/#reviews">
@@ -121,13 +119,13 @@ export function Header() {
                             </MobileNavLink>
                             <MobileNavLink href="/#pricing">
                               GitHub
-                            </MobileNavLink> */}
-                            {/* <MobileNavLink href="/#faqs">
+                            </MobileNavLink>
+                            <MobileNavLink href="/#faqs">
                               FAQs
-                            </MobileNavLink> */}
-                            {/* <MobileNavLink href="/#team">
+                            </MobileNavLink>
+                            <MobileNavLink href="/#team">
                               Meet the Team
-                            </MobileNavLink> */}
+                            </MobileNavLink>
                           </div>
                           <div className="mt-8 flex flex-col gap-4">
                             <Button href="/login" variant="outline">
@@ -135,18 +133,18 @@ export function Header() {
                             </Button>
                             <Button href="#">Download the app</Button>
                           </div>
-                        </PopoverPanel>
+                        </PopoverPanel> */}
                       </>
                     )}
                   </AnimatePresence>
                 </>
               )}
             </Popover>
-            <Button href="/login" variant="outline" className="hidden lg:block">
-              Log in
-            </Button>
-            <Button href="#" className="hidden lg:block">
-              Download
+            {/* <Button variant="outline" className="hidden lg:block" onClick={() => window.location.href = 'https://github.com/oslabs-beta/super-kuber'}>
+              GitHub
+            </Button> */}
+            <Button className="hidden lg:block" onClick={() => window.location.href = 'https://github.com/oslabs-beta/super-kuber'}>
+              GitHub
             </Button>
           </div>
         </Container>

@@ -98,18 +98,18 @@ function BackgroundIllustration(props: React.ComponentPropsWithoutRef<'div'>) {
   )
 }
 
-function PlayIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
-      <circle cx="12" cy="12" r="11.5" stroke="#D4D4D4" />
-      <path
-        d="M9.5 14.382V9.618a.5.5 0 0 1 .724-.447l4.764 2.382a.5.5 0 0 1 0 .894l-4.764 2.382a.5.5 0 0 1-.724-.447Z"
-        fill="#A3A3A3"
-        stroke="#A3A3A3"
-      />
-    </svg>
-  )
-}
+// function PlayIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+//   return (
+//     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+//       <circle cx="12" cy="12" r="11.5" stroke="#D4D4D4" />
+//       <path
+//         d="M9.5 14.382V9.618a.5.5 0 0 1 .724-.447l4.764 2.382a.5.5 0 0 1 0 .894l-4.764 2.382a.5.5 0 0 1-.724-.447Z"
+//         fill="#A3A3A3"
+//         stroke="#A3A3A3"
+//       />
+//     </svg>
+//   )
+// }
 
 export function Hero() {
   return (
@@ -118,7 +118,7 @@ export function Hero() {
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">
           <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
             <h1 className="text-4xl font-medium tracking-tight text-gray-900">
-            Comprehensive cluster monitoring.
+            Comprehensive cluster monitoring
             </h1>
             <p className="mt-6 text-lg text-gray-600">
             Monitor, analyze, and visualize your Kubernetes infrastructure with ease, ensuring optimal performance and proactive issue detection.

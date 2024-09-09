@@ -1,5 +1,6 @@
 import React from 'react'
 import { Chrono } from 'react-chrono'
+import '../../index.css'
 
 const features = [
   {
@@ -30,21 +31,38 @@ const features = [
 
 const Timeline = () => {
   return (
-      <div style={{ width: "100%", height: "500px" }}>
-      <Chrono
-        items={features}
-        mode="VERTICAL_ALTERNATING"
-        theme={{
-          primary: "#6001d2",
-          secondary: "#cbd5e1",
-          cardBgColor: "#fff",
-          cardForeColor: "#6001d2",
-        }}
-        cardHeight={200}
-        cardWidth={300}
-        disableControls={true}
-      />
+    <>
+    <div
+      id='next-features'
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignContent: 'center'
+      }}
+    >
+      <div style={{ 
+        width: "50%", 
+        height: "750px",
+        
+        }}>
+        <Chrono
+          items={features}
+          mode="VERTICAL_ALTERNATING"
+          theme={{
+            primary: "black",
+            secondary: "white",
+            cardBgColor: "#fff",
+            cardForeColor: "#6001d2",
+          }}
+          activeItemIndex={null}
+          cardHeight={200}
+          cardWidth={300}
+          disableControls={true}
+          disableToolbar={true}	
+        />
+      </div>
     </div>
+    </>
   )
 }
 

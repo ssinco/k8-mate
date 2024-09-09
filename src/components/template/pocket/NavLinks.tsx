@@ -8,17 +8,24 @@ export function NavLinks() {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   let timeoutRef = useRef<number | null>(null)
 
+  const scrollToSection = (id: string) => {
+    const element = document.querySelector(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   return [
-    ['Features', '/#features'],
-    ['Next Features', '/#next-features'],
-    ['GitHub', '/#github'],
-    ['FAQs', '/#faq'],
-    ['Meet the Team', '/#team'],
-  ].map(([label, href], index) => (
+    ['Features', '#features'],
+    ['Next Features', '#next-features'],
+    ['Meet the Team', '#team'],
+    ['GitHub', '#github'],
+  ].map(([label, id], index) => (
     <Link
       key={label}
-      href={href}
+      // href={href}
       className="relative -mx-3 -my-2 rounded-lg px-3 py-2 text-sm text-gray-700 transition-colors delay-150 hover:text-gray-900 hover:delay-0"
+      onClick={() => scrollToSection(id)}
       onMouseEnter={() => {
         if (timeoutRef.current) {
           window.clearTimeout(timeoutRef.current)
