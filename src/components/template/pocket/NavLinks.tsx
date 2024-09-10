@@ -19,7 +19,6 @@ export function NavLinks() {
     ['Features', '#features'],
     ['Next Features', '#next-features'],
     ['Meet the Team', '#team'],
-    ['GitHub', '#github'],
   ].map(([label, id], index) => (
     <Link
       key={label}

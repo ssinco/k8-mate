@@ -31,10 +31,10 @@ import { Container } from './Container'
 //   TupleLogo,
 // } from '@/components/StockLogos'
 
-import testImg1 from './images/logos/forbes.svg'
+// import testImg1 from './images/logos/forbes.svg'
 import testImg2 from './images/logos/cbs.svg'
 import testImg3 from './images/logos/cnn.svg'
-
+import DashboardGif from '../../../assets/gif/dashboard-showcase-ezgif.com-optimize.gif'
 const MotionAppScreenHeader = motion(AppScreen.Header)
 const MotionAppScreenBody = motion(AppScreen.Body)
 
@@ -50,7 +50,7 @@ const features = [
       'Our intuitive dashboards offer a comprehensive view of your cluster metrics, providing real-time insights and detailed analytics to help optimize performance and decision-making.',
     icon: DeviceUserIcon,
     // screen: InviteScreen,
-    image: testImg1,
+    image: DashboardGif,
   },
   {
     name: 'Real-time alerts',
@@ -267,7 +267,7 @@ function FeaturesDesktop() {
       </TabList>
       <div className="relative col-span-6">
         {/* Render the image of the selected feature */}
-        <div className="z-10 mx-auto w-full max-w-[366px]">
+        <div className="z-10 mx-auto w-full w-[620px]">
           <img
             src={features[selectedIndex].image} // Use image field here
             alt={features[selectedIndex].name}
@@ -330,10 +330,13 @@ function FeaturesMobile() {
                   className={featureIndex % 2 === 1 ? 'rotate-180' : undefined}
                 />
               </div>
-              <img
-                src={feature.image} // Use image field here
+              <img 
+                src={feature.image}
                 alt={feature.name}
-                className="relative mx-auto w-full max-w-[366px] rounded-lg shadow-lg"
+                style={{
+                  width: "600px",
+                  height: "auto"
+                }}
               />
               <div className="absolute inset-x-0 bottom-0 bg-gray-800/95 p-6 backdrop-blur sm:p-10">
                 <feature.icon className="h-8 w-8" />

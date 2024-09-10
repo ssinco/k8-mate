@@ -12,21 +12,15 @@ const features = [
   {
     title: "Multiple cluster recognition",
     cardTitle: "Monitor multiple clusters",
-    cardSubtitle: "Instantly swap to a different Kubernetees cluster.",
+    cardSubtitle: "Instantly swap to a different Kubernetes cluster.",
     cardDetailedText: "Implement a multi-view feature that can instantly swap to another active Kubernetes cluster"
   },
   {
     title: "Customize components",
-    cardTitle: "Analytics Dashboard",
+    cardTitle: "Configure resources",
     cardSubtitle: "Scale, delete, restart, or rollback resources",
     cardDetailedText: "Create an easy-to-use interface to scale, delete, restart or rollback cluster resources like pods, nodes, and deployments."
   },
-  // {
-  //   title: "Q2 2025",
-  //   cardTitle: "Mobile App Release",
-  //   cardSubtitle: "Cross-platform support for iOS and Android.",
-  //   cardDetailedText: "Launch the mobile version of the app with all core functionalities."
-  // }
 ]
 
 const Timeline = () => {
