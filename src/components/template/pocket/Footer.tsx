@@ -1,4 +1,3 @@
-// import Image from 'next/image'
 import { Link } from 'react-router-dom'
 
 import { Button } from './Button'
@@ -6,19 +5,6 @@ import { Container } from './Container'
 import { TextField } from './Fields'
 import { Logomark } from './Logo'
 import { NavLinks } from './NavLinks'
-import qrCode from '@/images/qr-code.svg'
-
-// function QrCodeBorder(props: React.ComponentPropsWithoutRef<'svg'>) {
-//   return (
-//     <svg viewBox="0 0 96 96" fill="none" aria-hidden="true" {...props}>
-//       <path
-//         d="M1 17V9a8 8 0 0 1 8-8h8M95 17V9a8 8 0 0 0-8-8h-8M1 79v8a8 8 0 0 0 8 8h8M95 79v8a8 8 0 0 1-8 8h-8"
-//         strokeWidth="2"
-//         strokeLinecap="round"
-//       />
-//     </svg>
-//   )
-// }
 
 export function Footer() {
   return (
@@ -29,7 +15,7 @@ export function Footer() {
             <div className="flex items-center text-gray-900">
               <Logomark className="h-10 w-10 flex-none fill-cyan-500" />
               <div className="ml-4">
-                <p className="text-2xl font-medium tracking-tight text-white">SuperKuber</p>
+                <p className="text-2xl font-medium tracking-tight text-white">K8Mate</p>
                 <p className="mt-1 text-lg text-gray-400">Reliable K8s monitoring systems</p>
               </div>
             </div>
