@@ -32,9 +32,10 @@ import { Container } from './Container'
 // } from '@/components/StockLogos'
 
 // import testImg1 from './images/logos/forbes.svg'
-import testImg2 from './images/logos/cbs.svg'
+// import testImg2 from './images/logos/cbs.svg'
 import testImg3 from './images/logos/cnn.svg'
 import DashboardGif from '../../../assets/gif/dashboard-showcase-ezgif.com-optimize.gif'
+import AlertsGif from '../../../assets/gif/alerts-showcase-ezgif.com-optimize.gif'
 const MotionAppScreenHeader = motion(AppScreen.Header)
 const MotionAppScreenBody = motion(AppScreen.Body)
 
@@ -58,7 +59,7 @@ const features = [
       'We provide real-time alerts based on key cluster metrics, ensuring you stay informed about performance, resource usage, and potential issues in your infrastructure.',
     icon: DeviceNotificationIcon,
     // screen: StocksScreen,
-    image: testImg2,
+    image: AlertsGif,
   },
   {
     name: 'Visualize your cluster architecture',
