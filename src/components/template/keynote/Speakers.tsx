@@ -17,22 +17,22 @@ const days = [
     speakers: [
       {
         name: 'Richard To',
-        role: 'Software Engineer at Super Kuber',
+        role: 'Software Engineer at K8Mate',
         image: richImage,
       },
       {
         name: 'Stephen Sinco',
-        role: 'Software Engineer at Super Kuber',
+        role: 'Software Engineer at K8Mate',
         image: stephenImage,
       },
       {
         name: 'Aaron Thien',
-        role: 'Software Engineer at Super Kuber',
+        role: 'Software Engineer at K8Mate',
         image: aaronImage,
       },
       {
         name: 'Jonathan Si',
-        role: 'Software Engineer at Super Kuber',
+        role: 'Software Engineer at K8Mate',
         image: jonathanImage,
       },
     ],
@@ -172,7 +172,7 @@ export function Team() {
             Meet the Team
           </h1>
           <p className="mt-6 text-lg text-gray-600">
-            View the founders and continuous contributers of SuperKuber
+            View the founders and continuous contributers of K8Mate
           </p>
         </div>
         <TabGroup
