@@ -1,43 +1,32 @@
 import { useId } from 'react'
 
-import { Container } from '@/components/Container'
+import { Container } from './Container'
+
+import {
+  ChatBubbleLeftRightIcon,
+  DocumentMagnifyingGlassIcon,
+  AdjustmentsHorizontalIcon,
+} from '@heroicons/react/16/solid'
+
 
 const features = [
   {
-    name: 'Invest any amount',
+    name: 'AI LLM Integration',
     description:
-      'Whether it’s $1 or $1,000,000, we can put your money to work for you.',
-    icon: DeviceArrowIcon,
+      "We will integrate AI to analyze and summarize the Kubernetes cluster performance, providing insights for admins and developers in an easy-to-read format.",
+    icon: ChatBubbleLeftRightIcon,
   },
   {
-    name: 'Build a balanced portfolio',
+    name: 'Multi-Cluster Recognition',
     description:
-      'Invest in different industries to find the most opportunities to win huge.',
-    icon: DeviceCardsIcon,
+      "Implement a multi-view feature that can instantly swap to another active Kubernetes cluster.",
+    icon: DocumentMagnifyingGlassIcon,
   },
   {
-    name: 'Trade in real-time',
+    name: 'Configure Resources',
     description:
-      'Get insider tips on big stock moves and act on them within seconds.',
-    icon: DeviceClockIcon,
-  },
-  {
-    name: 'Profit from your network',
-    description:
-      'Invite new insiders to get tips faster and beat even other Pocket users.',
-    icon: DeviceListIcon,
-  },
-  {
-    name: 'Encrypted and anonymized',
-    description:
-      'Cutting-edge security technology that even the NSA doesn’t know about keeps you hidden.',
-    icon: DeviceLockIcon,
-  },
-  {
-    name: 'Portfolio tracking',
-    description:
-      'Watch your investments grow exponentially, leaving other investors in the dust.',
-    icon: DeviceChartIcon,
+      "Create an easy-to-use interface to scale, delete, restart or rollback cluster resources like pods, nodes, and deployments.",
+    icon: AdjustmentsHorizontalIcon,
   },
 ]
 
@@ -191,16 +180,23 @@ export function SecondaryFeatures() {
     <section
       id="secondary-features"
       aria-label="Features for building a portfolio"
-      className="py-20 sm:py-32"
+      className="py-20 sm:py-32 bg-gray-900"
     >
       <Container>
         <div className="mx-auto max-w-2xl sm:text-center">
-          <h2 className="text-3xl font-medium tracking-tight text-gray-900">
-            Now is the time to build your portfolio.
+          <h2 className="text-3xl font-medium tracking-tight text-white">
+            Our Feature Roadmap
           </h2>
-          <p className="mt-2 text-lg text-gray-600">
-            With typical market returns, you have to start young to secure your
-            future. With Pocket, it’s never too late to build your nest egg.
+          <p className="mt-2 text-lg text-gray-400">
+            Contribute to the project today! Visit the {' '}
+            <a
+              href="https://github.com/oslabs-beta/K8Mate" // Replace with the actual GitHub URL
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-purple-500 hover:underline"
+            >
+              K8 Mate GitHub
+            </a>
           </p>
         </div>
         <ul
@@ -210,13 +206,13 @@ export function SecondaryFeatures() {
           {features.map((feature) => (
             <li
               key={feature.name}
-              className="rounded-2xl border border-gray-200 p-8"
+              className="rounded-2xl border border-gray-600 p-8"
             >
-              <feature.icon className="h-8 w-8" />
-              <h3 className="mt-6 font-semibold text-gray-900">
+              <feature.icon className="h-12 w-12 text-purple-500" />
+              <h3 className="mt-6 font-semibold text-white">
                 {feature.name}
               </h3>
-              <p className="mt-2 text-gray-700">{feature.description}</p>
+              <p className="mt-2 text-gray-400">{feature.description}</p>
             </li>
           ))}
         </ul>
