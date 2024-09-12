@@ -2,7 +2,11 @@ import { useId } from 'react'
 import { Container } from './Container'
 import K8MateLogo from '../pocket/images/logos/k8-mate-logo.png'
 
-function BackgroundIllustration(props: React.ComponentPropsWithoutRef<'div'>) {
+import DashboardGif from '../../../assets/gif/dashboard-showcase.gif'
+import AlertsGif from '../../../assets/gif/alerts-showcase.gif'
+import TreeGif from '../../../assets/gif/tree-showcase.gif'
+
+export function BackgroundIllustration(props: React.ComponentPropsWithoutRef<'div'>) {
   let id = useId()
 
   return (
@@ -32,8 +36,8 @@ function BackgroundIllustration(props: React.ComponentPropsWithoutRef<'div'>) {
             y2="1025"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#06b6d4" />
-            <stop offset="1" stopColor="#06b6d4" stopOpacity="0" />
+            <stop stopColor="#6001D2" />
+            <stop offset="1" stopColor="#6001D2" stopOpacity="0" />
           </linearGradient>
         </defs>
       </svg>
@@ -62,8 +66,8 @@ function BackgroundIllustration(props: React.ComponentPropsWithoutRef<'div'>) {
             y2="913"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#06b6d4" />
-            <stop offset="1" stopColor="#06b6d4" stopOpacity="0" />
+            <stop stopColor="#6001D2" />
+            <stop offset="1" stopColor="#6001D2" stopOpacity="0" />
           </linearGradient>
         </defs>
       </svg>
@@ -73,25 +77,36 @@ function BackgroundIllustration(props: React.ComponentPropsWithoutRef<'div'>) {
 
 export function Hero() {
   return (
-    <div className="overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36">
+    <div className="overflow-hidden py-20 lg:pb-52 ">
+      
       <Container>
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">
           <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
-            <h1 className="text-4xl font-medium tracking-tight text-gray-900">
-            Comprehensive cluster monitoring
+            <h1 className="text-9xl font-bold text-superPurple">
+            K8 <span className="text-zinc-900">Mate</span>
             </h1>
+            
             <p className="mt-6 text-lg text-gray-600">
             Monitor, analyze, and visualize your Kubernetes infrastructure with ease, ensuring optimal performance and proactive issue detection.
             </p>
           </div>
+          
           <div className="relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
             <BackgroundIllustration className="absolute left-1/2 top-4 h-[1026px] w-[1026px] -translate-x-1/3 stroke-gray-300/70 [mask-image:linear-gradient(to_bottom,white_20%,transparent_75%)] sm:top-16 sm:-translate-x-1/2 lg:-top-16 lg:ml-12 xl:-top-14 xl:ml-0" />
-            <div className="-mx-4 h-[448px] px-9 flex justify-center items-center [mask-image:linear-gradient(to_bottom,white_60%,transparent)] sm:mx-0 lg:absolute lg:-inset-x-10 lg:-bottom-20 lg:-top-10 lg:h-auto lg:px-0 lg:pt-10 xl:-bottom-32">
-              <img 
+            <div className="-mx-4 h-[520px] px-9 flex justify-center items-center [mask-image:linear-gradient(to_bottom,white_100%,transparent)] sm:mx-0 lg:absolute lg:-inset-x-10 lg:-bottom-20 lg:-top-10 lg:h-auto lg:px-0 lg:pt-10 xl:-bottom-32">
+              {/* <img 
                 src={K8MateLogo} 
                 alt="K8Mate Logo"
-                className="transform translate-y-[-50px]" 
+                className="transform translate-y-[-50px] animate-float" 
               />
+               */}
+              <div className="z-10 mx-auto w-full sm:w-[500px]">
+                <img
+                  src={AlertsGif}
+                  className="rounded-lg shadow-lg"
+                />
+              </div>
+            
             </div>
           </div>
         </div>
