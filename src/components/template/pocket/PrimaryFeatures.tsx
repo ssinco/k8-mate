@@ -33,7 +33,7 @@ import { Container } from './Container'
 
 // import testImg1 from './images/logos/forbes.svg'
 // import testImg2 from './images/logos/cbs.svg'
-import testImg3 from './images/logos/cnn.svg'
+// import testImg3 from './images/logos/cnn.svg'
 import DashboardGif from '../../../assets/gif/dashboard-showcase.gif'
 import AlertsGif from '../../../assets/gif/alerts-showcase.gif'
 import TreeGif from '../../../assets/gif/tree-showcase.gif'
