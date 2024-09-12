@@ -5,7 +5,13 @@ import { Header } from './components/template/pocket/Header'
 import { PrimaryFeatures } from './components/template/pocket/PrimaryFeatures'
 import { Team } from './components/template/keynote/Speakers'
 import { Footer } from './components/template/pocket/Footer'
+
+import { SecondaryFeatures } from './components/template/pocket/SecondaryFeatures'
+
 import Timeline from './pages/Timeline/Timeline'
+import NextFeatures from './components/custom/NextFeatures'
+
+import './App.css'
 
 function App() {
 
@@ -14,9 +20,12 @@ function App() {
       <Header />
       <Hero />
       <PrimaryFeatures />
-      <Timeline />
+      <SecondaryFeatures/>
+      {/* <NextFeatures/> */}
+      {/* <Timeline /> */}
       <Team />
       <Footer />
+      
     </>
   )
 }

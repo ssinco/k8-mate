@@ -2,8 +2,13 @@ import { useEffect, useId, useState } from 'react'
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 import clsx from 'clsx'
 
+
 import { Container } from './Container'
 import { DiamondIcon } from './DiamondIcon'
+
+import { FaLinkedin } from 'react-icons/fa';
+
+
 import richImage from './images/richard-to.jpg'
 import stephenImage from './images/stephen-sinco.jpeg'
 import aaronImage from './images/aaron-thien.jpg'
@@ -17,23 +22,27 @@ const days = [
     speakers: [
       {
         name: 'Richard To',
-        role: 'Software Engineer at K8Mate',
+        role: 'Software Engineer',
         image: richImage,
+        linkedinUrl: 'https://www.linkedin.com/feed/',
       },
       {
         name: 'Stephen Sinco',
-        role: 'Software Engineer at K8Mate',
+        role: 'Software Engineer',
         image: stephenImage,
+        linkedinUrl: 'https://www.linkedin.com/in/stephen-sinco/',
       },
       {
         name: 'Aaron Thien',
-        role: 'Software Engineer at K8Mate',
+        role: 'Software Engineer',
         image: aaronImage,
+        linkedinUrl: 'https://www.linkedin.com/feed/',
       },
       {
         name: 'Jonathan Si',
-        role: 'Software Engineer at K8Mate',
+        role: 'Software Engineer',
         image: jonathanImage,
+        linkedinUrl: 'https://www.linkedin.com/feed/',
       },
     ],
   },
@@ -119,7 +128,7 @@ function ImageClipPaths({
 }: React.ComponentPropsWithoutRef<'svg'> & { id: string }) {
   return (
     <svg aria-hidden="true" width={0} height={0} {...props}>
-      <defs>
+      {/* <defs>
         <clipPath id={`${id}-0`} clipPathUnits="objectBoundingBox">
           <path d="M0,0 h0.729 v0.129 h0.121 l-0.016,0.032 C0.815,0.198,0.843,0.243,0.885,0.243 H1 v0.757 H0.271 v-0.086 l-0.121,0.057 v-0.214 c0,-0.032,-0.026,-0.057,-0.057,-0.057 H0 V0" />
         </clipPath>
@@ -129,7 +138,7 @@ function ImageClipPaths({
         <clipPath id={`${id}-2`} clipPathUnits="objectBoundingBox">
           <path d="M1,0 H0.271 v0.129 H0.15 l0.016,0.032 C0.185,0.198,0.157,0.243,0.115,0.243 H0 v0.757 h0.729 v-0.086 l0.121,0.057 v-0.214 c0,-0.032,0.026,-0.057,0.057,-0.057 h0.093 V0" />
         </clipPath>
-      </defs>
+      </defs> */}
     </svg>
   )
 }
@@ -172,7 +181,7 @@ export function Team() {
             Meet the Team
           </h1>
           <p className="mt-6 text-lg text-gray-600">
-            View the founders and continuous contributers of K8Mate
+            Meet the founders and contributors of K8 Mate™
           </p>
         </div>
         <TabGroup
@@ -226,12 +235,13 @@ export function Team() {
               <TabPanel
                 key={day.dateTime}
                 // className="grid grid-cols-1 gap-x-8 gap-y-10 ui-not-focus-visible:outline-none sm:grid-cols-2 sm:gap-y-16 md:grid-cols-3"
-                className="grid grid-cols-1 gap-x-8 gap-y-10 ui-not-focus-visible:outline-none sm:grid-cols-2 sm:gap-y-16 md:grid-cols-3"
+                // className="grid grid-cols-1 gap-x-8 gap-y-10 ui-not-focus-visible:outline-none sm:grid-cols-2 sm:gap-y-16 md:grid-cols-3"
+                className="grid grid-cols-1 gap-x-8 gap-y-10 ui-not-focus-visible:outline-none sm:grid-cols-4 sm:gap-y-16 "
                 unmount={false}
               >
                 {day.speakers.map((speaker, speakerIndex) => (
                   <div key={speakerIndex}>
-                    <div className="group relative h-[17.5rem] transform overflow-hidden rounded-4xl">
+                    <div className="group relative h-[12rem] transform overflow-hidden rounded-4xl">
                       <div
                         className={clsx(
                           'absolute bottom-6 left-0 right-4 top-0 rounded-4xl border transition duration-300 group-hover:scale-95 xl:right-6',
@@ -267,6 +277,10 @@ export function Team() {
                     <p className="mt-1 text-base tracking-tight text-slate-500">
                       {speaker.role}
                     </p>
+                    <a href={speaker.linkedinUrl} target="_blank" rel="noopener noreferrer">
+                      <FaLinkedin className="w-6 h-6 mt-2"/>
+                    </a>
+                    
                   </div>
                 ))}
               </TabPanel>

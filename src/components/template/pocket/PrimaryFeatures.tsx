@@ -37,8 +37,12 @@ import testImg3 from './images/logos/cnn.svg'
 import DashboardGif from '../../../assets/gif/dashboard-showcase.gif'
 import AlertsGif from '../../../assets/gif/alerts-showcase.gif'
 import TreeGif from '../../../assets/gif/tree-showcase.gif'
+import { BackgroundIllustration } from './Hero'
+
 const MotionAppScreenHeader = motion(AppScreen.Header)
 const MotionAppScreenBody = motion(AppScreen.Body)
+
+
 
 interface CustomAnimationProps {
   isForwards: boolean
@@ -310,10 +314,16 @@ export function PrimaryFeatures() {
     <section
       id="features"
       aria-label="Features for investing all your money"
-      className="bg-gray-900 py-20 sm:py-32"
+      className="bg-purple-900 py-32 relative flex flex-col items-center"
     >
+ 
+      <BackgroundIllustration 
+        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/3 h-[1200px] w-[1200px] z-0 opacity-30 pointer-events-none [mask-image:linear-gradient(to_bottom,white_10%,transparent_100%)]" 
+      />
+
+
       <Container>
-        <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
+        <div className="relative z-10 mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
           <h2 className="text-3xl font-medium tracking-tight text-white">
             Every feature you need to monitor your Kubernetes cluster
           </h2>

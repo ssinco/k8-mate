@@ -21,6 +21,9 @@ export default {
       '9xl': ['8rem', { lineHeight: '1' }],
     },
     extend: {
+      screens: {
+        'xs':'400px',
+      },
       animation: {
         'fade-in': 'fade-in 0.5s linear forwards',
         marquee: 'marquee var(--marquee-duration) linear infinite',
@@ -29,6 +32,7 @@ export default {
         'spin-reverse': 'spin-reverse 1s linear infinite',
         'spin-reverse-slow': 'spin-reverse 4s linear infinite',
         'spin-reverse-slower': 'spin-reverse 6s linear infinite',
+        float: 'float 3s ease-in-out infinite', // Define the animation with keyframes
       },
       borderRadius: {
         '4xl': '2rem',
@@ -36,6 +40,7 @@ export default {
       },
       colors: ({ colors }) => ({
         gray: colors.neutral,
+        superPurple: '#6001D2',
       }),
       fontFamily: {
         sans: 'var(--font-inter, sans-serif)',
@@ -58,6 +63,12 @@ export default {
           to: {
             transform: 'rotate(-360deg)',
           },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '25%': { transform: 'translateY(5px)' },
+          '50%': { transform: 'translateY(-2px)' },
+          '75%': { transform: 'translateY(5px)' },
         },
       },
       maxWidth: {
